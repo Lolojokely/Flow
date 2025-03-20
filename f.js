@@ -1,11 +1,7 @@
-const { Keypair } = require('@solana/web3.js');
-const axios = require('axios');
-const fs = require('fs');
-const bs58 = require('bs58');
-const nacl = require('tweetnacl');
-const { HttpsProxyAgent } = require('https-proxy-agent');
-const { SocksProxyAgent } = require('socks-proxy-agent');
-const chalk = require('chalk');
+import { Keypair } from '@solana/web3.js';
+import axios from 'axios';
+import fs from 'fs';
+import chalk from 'chalk';
 const TelegramBot = require('node-telegram-bot-api'); // Telegram library added
 
 function displayBanner() {
