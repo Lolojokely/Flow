@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install @solana/web3.js axios node-fetch fs readline bs58 tweetnacl https-proxy-agent socks-proxy-agent node-telegram-bot-api
+          npm install @solana/web3.js axios node-fetch chalk bs58 tweetnacl https-proxy-agent socks-proxy-agent node-telegram-bot-api
 
       - name: Run f.js script
         env:
