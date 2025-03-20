@@ -13,6 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Ensure package.json with ESM configuration exists
+        run: |
+          if [ ! -f package.json ]; then
+            echo '{ "type": "module" }' > package.json
+          else
+            # If package.json exists but does not contain "type": "module", append it.
+            grep -q '"type": "module"' package.json || sed -i '1s/^/{\n  "type": "module",\n/' package.json
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
